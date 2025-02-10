@@ -1,0 +1,99 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8f8f8;
+  margin: 0;
+}
+
+.loader {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.pan {
+  width: 120px;
+  height: 120px;
+  background-color: #a0522d;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.pan::before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 20px;
+  background-color: #a0522d;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  border-radius: 10px;
+}
+
+.egg {
+  width: 60px;
+  height: 80px;
+  background-color: #ffd700;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: cook 2s ease-in-out infinite;
+}
+
+.bubble {
+  width: 10px;
+  height: 10px;
+  background-color: #ff4500;
+  border-radius: 50%;
+  position: absolute;
+  animation: bubble-float 2s ease-in-out infinite;
+}
+
+.bubble-1 {
+  top: 40%;
+  left: 40%;
+  animation-delay: 0s;
+}
+
+.bubble-2 {
+  top: 50%;
+  left: 60%;
+  animation-delay: 0.5s;
+}
+
+.bubble-3 {
+  top: 60%;
+  left: 30%;
+  animation-delay: 1s;
+}
+
+@keyframes cook {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+@keyframes bubble-float {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+}
